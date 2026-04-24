@@ -1,0 +1,16 @@
+{
+  "family": "llama-api-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "2048",
+  "memory": "4096",
+  "executionRoleArn": "arn:aws:iam::269172689933:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "llama-api",
+      "image": "269172689933.dkr.ecr.us-east-1.amazonaws.com/llama-api:latest",
+      "portMappings": [{"containerPort": 8000, "protocol": "tcp"}],
+      "essential": true
+    }
+  ]
+}
